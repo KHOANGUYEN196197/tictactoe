@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+    background: #FAF8EF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+#game-div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 100%;
+}
+
+.hide {
+    display: none !important;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.player-info-container {
+    width: 100%;
+    background: #BBADA0;
+    border-radius: 10px;
+    margin: 0 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+    display: flex;
+}
+
+.player-info-container span {
+    font-size: 20px;
+    color: white;
+    margin-top: 2px;
+    width: 100%;
+    text-align: center;
+}
+
+.player-info-image {
+    height: 25px;
+    margin-right: 10px;
+}
+
+/*board*/
+.disabled-td {
+    cursor: default!important;
+}
+
+.disabled-td:hover {
+    background-color: rgb(0, 0, 0, 0) !important
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    width: 399px;
+}
+
+td {
+    width: 133px;
+    height: 133px;
+    border: 7px solid #BBADA0;
+    position: relative;
+    cursor: pointer;
+    background-size: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+td:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+table tr:first-child td {
+    border-top: 0;
+}
+
+table tr td:first-child {
+    border-left: 0;
+}
+
+table tr:last-child td {
+    border-bottom: 0;
+}
+
+table tr td:last-child {
+    border-right: 0;
+}
+
+/*lines*/
+.horizontal-line {
+    height: 10px;
+    width: 399px;
+    position: absolute;
+    z-index: 1;
+    background: #8C8178;
+    left: 10px;
+    transition: 225ms;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+/*winning container*/
+#winning-container {
+    width: 420px;
+    height: 450px;
+    background: rgb(250, 248, 239, 1);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #8F7A66;
+    font-size: 20px;
+    z-index: 2;
+    margin-top: 70px;
+    transition-duration: 500ms;
+}
+
+#winning-container-img {
+    height: 160px;
+    margin: 40px;
+}
+
+#play-again-button {
+    margin: 30px;
+    padding: 10px 30px;
+    background: #8F7A66;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#play-again-button:hover {
+    background: #A58C77;
+}
+
+@media(max-width: 440px) {
+    tr {
+        width: 270px;
+    }
+
+    td {
+        width: 90px;
+        height: 90px;
+        background-size: 60px;
+        border: 5px solid #BBADA0;
+    }
+
+    .horizontal-line {
+        height: 5px;
+        width: 270px;
+    }
+
+    #line-0 {
+        top: 128px !important
+    }
+
+    #line-1 {
+        top: 227px !important
+    }
+    
+    #line-2 {
+        top: 324px !important
+    }
+
+    #line-3 {
+        left: 45px !important; 
+        top: 88px !important;
+    } 
+
+    #line-4 {
+        left: 143px !important; 
+        top: 88px !important;
+    } 
+
+    #line-5 {
+        left: 240px !important; 
+        top: 88px !important;
+    } 
+
+    #line-6 {
+        left: 47px !important;
+        top: 130px !important;
+    }
+
+    #line-7 {
+        left: 239px !important;
+        top: 131px !important;
+    }
+
+    #winning-container {
+        width: 300px;
+        height: 380px;
+    }
+
+    #winning-container-img {
+        height: 120px;
+        margin: 20px;
+    }
+}
